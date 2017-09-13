@@ -1,0 +1,55 @@
+
+
+.navbar-info {
+    width: 100%;
+    
+    
+}
+.fixed-me{
+    transition: all 1s ;
+}
+
+.fixed-me{
+    background-color:#3b5998 !important;
+    padding: 0px  !important;
+    margin-bottom: 5px;
+    position: fixed;
+    top:0;
+	z-index:888;
+    width: 100%;
+    border-bottom: 3px solid #d5d64a !important;
+    
+}
+
+.navbar-me {
+    
+   transition: all 1s ;
+}
+.header-right-menu{
+ padding: 5px 15px !important;   
+    
+}
+.site-logo{
+    padding: 15px 20px !important; 
+    margin: 15px 10px !important;
+}
+.navbar-me{
+    padding: 10px 0px;
+    background-color: #3b5998;
+    top: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+.navbar-collapse{
+    text-align: center;
+    border-top-width: 0px;
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+.menu-collapsed-button{
+    margin: 20px 15px 10px 15px !important;
+}

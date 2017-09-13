@@ -1,0 +1,62 @@
+
+
+BACKEND
+
+STAFF			--DONE
+CRUD
+- Firstname
+- Lastname
+- Middlename
+- position
+- Image
+
+FACULTY  		--DONE
+CRUD
+- Firstname
+- Lastname
+- Middlename
+- Advisory class(category)
+- Image
+
+PTA OFFICERS (tuloy muna lang)	--UNdone
+CRUD
+- Firstname
+- Lastname
+- Middlename
+- position
+
+ACCOUNT/LOGIN		--UNdone *pero may login na. crud nalang sa backend wala. 
+CRUD					sa Controllers/Auth/RegisterController palitan mo 
+- Username				index na redirect para di makapag register. 
+- Password				tapos ayusin mo nalang yung view ng login. nasa
+- position					Controllers/HomeController yung function ng login.
+
+					Bago mo pala palitan yung registercontroller.index mag register ka muna isang admin para makapag login ka. naka encrypt kase password kaya hindi pwede rekta sa database.
+
+
+TUITION			--UNdone *diko magets
+CRUD
+- title
+- Down Payment
+- Computer Fee
+- Monthly Fee
+
+DISCOUNTS		--UNdone *diko magets
+CRUD
+-title (category)
+-Discount percentage(number lang)
+
+COURSE OFFERED		-- DONE!
+(ayusin muna lang pag display ng image)
+
+LATEST NEWS		--DONE!
+(ayusin muna lang pag display ng image)
+-----FRONT END------
+
+
+DISPLAY MO LAHAT NG PINAG GAGAWA MO KUNG MAY KULANG SA DESIGN PM MO AKO HAHAHAHAHA
+
+
+
+
+
