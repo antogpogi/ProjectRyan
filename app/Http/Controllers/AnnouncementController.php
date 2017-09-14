@@ -8,6 +8,10 @@ use Session;
 
 class AnnouncementController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Dissplay a listing of the resource.
      *

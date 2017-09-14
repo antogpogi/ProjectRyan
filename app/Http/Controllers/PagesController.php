@@ -8,6 +8,7 @@ use App\Course;
 use App\lnew;
 class PagesController extends Controller
 {
+	
 	public function getIndex()
 	{
 		$announcements = Announcement::orderBy('created_at','asc')->limit(5)->get();
