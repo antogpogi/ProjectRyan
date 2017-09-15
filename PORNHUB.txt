@@ -25,11 +25,11 @@ CRUD
 - Middlename
 - position
 
-ACCOUNT/LOGIN		--UNdone *pero may login na. crud nalang sa backend wala. 
-CRUD					sa Controllers/Auth/RegisterController palitan mo 
-- Username				index na redirect para di makapag register. 
-- Password				tapos ayusin mo nalang yung view ng login. nasa
-- position					Controllers/HomeController yung function ng login.
+ACCOUNT/LOGIN		--DONE
+CRUD					
+- Username				
+- Password				
+- position					
 
 					Bago mo pala palitan yung registercontroller.index mag register ka muna isang admin para makapag login ka. naka encrypt kase password kaya hindi pwede rekta sa database.
 

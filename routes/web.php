@@ -21,6 +21,7 @@ Route::get('board','PagesController@getBoard');
 Route::post('login/login', 'LoginController@login')->name('login.login');
 Route::get('login','LoginController@index')->name('login');
 //Route::get('blog',['uses' => 'BlogController@getIndex','as'=>'blog.index']);
+Route::resource('admin','AdminController');
 Route::resource('announcement','AnnouncementController');
 Route::resource('frontend','frontController');
 Route::resource('events','EventsController');

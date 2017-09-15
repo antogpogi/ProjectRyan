@@ -4,7 +4,8 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a href="#"><span> Dashboard</span></a></li> 
+                        <li><a href="#"><span> Dashboard</span></a></li>
+                        <li><a href="/admin"><span> Dashboard</span></a></li>
                        <li><a class="" href="/staff"><span> Staff</span></a></li>
                         <li><a class="" href="/faculty"><span> Faculty</span></a></li>
                         <li><a class="" href="/pta"><span> PTA</span></a></li>
