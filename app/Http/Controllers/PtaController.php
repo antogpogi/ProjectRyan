@@ -20,6 +20,8 @@ class PtaController extends Controller
     public function index()
     {
         //
+        $ptas = pta::orderBy('id','asc')->paginate(10);
+        return view('pta.index')->withPtas($ptas);
     }
 
     /**
@@ -57,7 +59,7 @@ class PtaController extends Controller
         $pta->slug = $request->slug;
 
         $pta->save();
-
+        return redirect()->route('pta.show',$pta->id); 
         Session::flash('success','The PTA was successfully save!');
     }
 
@@ -70,6 +72,8 @@ class PtaController extends Controller
     public function show($id)
     {
         //
+       $pta = pta::find($id);
+       return view('pta.show')->withPta($pta);
     }
 
     /**
@@ -81,6 +85,8 @@ class PtaController extends Controller
     public function edit($id)
     {
         //
+        $pta = pta::find($id);
+        return view('pta.edit')->withPta($pta);
     }
 
     /**
@@ -93,8 +99,26 @@ class PtaController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
+        $pta = pta::find($id);
 
+        $this->validate($request, array(
+            'ptaFname' => 'required',
+            'ptaLname' => 'required',
+            'ptaMi' => 'required',
+            'ptaPosition' => 'required',
+            'ptaMrs' => 'required',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:ptas,slug,$id'
+            ));
+        $pta->ptaLname = $request->input('ptaLname');
+        $pta->ptaFname = $request->input('ptaFname');
+        $pta->ptaMi = $request->input('ptaMi');
+        $pta->ptaPosition = $request->input('ptaPosition');
+        $pta->slug = $request->input('slug');
+        $pta->ptaMrs = $request->input('ptaMrs');
+        $pta->save();
+        Session::flash('success','This PTA was successfully saved.');
+        return redirect()->route('pta.show',$pta->id);
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -103,6 +127,9 @@ class PtaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pta = pta::find($id);
+        $pta->delete();
+        Session::flash('success','The PTA was successfully deleted');
+        return  redirect()->route('pta.index',$pta->id);
     }
 }
