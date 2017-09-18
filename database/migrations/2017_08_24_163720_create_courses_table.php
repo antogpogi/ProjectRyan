@@ -17,7 +17,7 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('titleCourse');
             $table->string('slug');
-            $table->string('bodyCourse');
+            $table->text('bodyCourse');
             $table->string('imageCourse');
             $table->timestamps();
         });

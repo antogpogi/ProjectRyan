@@ -45,10 +45,10 @@ class AdminController extends Controller
         //
         $this->validate($request, array(
             'username' => 'required',
-            'password' => 'required',
+            'password' => bcrypt($data['password']),
             'position' => 'required'
             ));
-        $admin = new Admin;
+        $admin = new User;
         $admin->username = $request->username;
         $admin->password = $request->password;
         $admin->position = $request->position;

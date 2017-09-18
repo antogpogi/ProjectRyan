@@ -66,7 +66,7 @@ class NewsController extends Controller
         }
 
         $lnew->save();
-         Session::flash('success','The News was successfully save!');
+        Session::flash('success','The News was successfully save!');
         return redirect()->route('news.show',$lnew->id);
     }
 

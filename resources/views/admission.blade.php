@@ -45,54 +45,61 @@
 			<table class="table">
 				<thead class="taytel">
 					<th>LEVEL</th>
+					<th>&nbsp;</th>
 					<th>DOWN PAYMENT</th>
 					<th>COMPUTER FEE</th>
 					<th>MONTHLY</th>
 				</thead>
 				<tbody>
-					<tr>
-						<th>PRE-SCHOOL ELEMENTARY</th>
-						<td>3,000.00</td>
-						<td>500.00</td>
-						<td>750.00</td>
-					</tr>
-					<tr>
-						<th>GRADE 1-3</th>
-						<td>3,000.00</td>
-						<td>550.00</td>
-						<td>850.00</td>
-					</tr>
 
-					<tr>
-						<th>GRADE 4-6</th>
-						<td>3,000.00</td>
-						<td>650.00</td>
-						<td>880.00</td>
-					</tr>
+					@foreach($tuitions as $tuition)
+						@if($tuition->title == 'PRE-SCHOOL')
+						<tr>
+							<th class="sub-title">{{$tuition->title}}</th>
+							<th>{{$tuition->level}}</th>
+							<td>{{$tuition->downPayment}}</td>
+							<td>{{$tuition->computerFee}}</td>
+							<td>{{$tuition->monthlyFee}}</td>
+						</tr>
+						@endif
 
-					<tr>
-						<th class="taytel">HIGH SCHOOL JUNIOR HS</th>
+						
 
-					</tr>	
+						@if($tuition->title =='ELEMENTARY')
+						<tr>
+							<th class="sub-title">{{$tuition->title}}</th>
+							<th>{{$tuition->level}}</th>
+							<td>{{$tuition->downPayment}}</td>
+							<td>{{$tuition->computerFee}}</td>
+							<td>{{$tuition->monthlyFee}}</td>
+						</tr>
+						@endif
 
-					<tr>
-						<th>GRADE 7-10</th>
-						<td>3,500.00</td>
-						<td>750.00</td>
-						<td>950.00</td>
-					</tr>
 
-					<tr>
-						<th class="taytel">SENIOR HIGH SCHOOL (PER SEMESTER)</th>
-
-					</tr>		
-
-					<tr>
-						<th>GRADE 11-12</th>
-						<td>3,500.00</td>
-						<td>800.00</td>
-						<td>4,550.00</td>
-					</tr>												
+					@endforeach					
+					@foreach($tuitions as $tuition)
+					@if($tuition->title =='JUNIOR HIGH SCHOOL')					
+						<tr>
+							<th class="sub-title">{{$tuition->title}}</th>
+							<th>{{$tuition->level}}</th>
+							<td>{{$tuition->downPayment}}</td>
+							<td>{{$tuition->computerFee}}</td>
+							<td>{{$tuition->monthlyFee}}</td>
+						</tr>
+						@endif
+					@endforeach
+					@foreach($tuitions as $tuition)
+					@if($tuition->title =='SENIOR HIGH SCHOOL')					
+						<tr>
+							<th class="sub-title">{{$tuition->title}}</th>
+							<th>{{$tuition->level}}</th>
+							<td>{{$tuition->downPayment}}</td>
+							<td>{{$tuition->computerFee}}</td>
+							<td>{{$tuition->monthlyFee}}</td>
+						</tr>
+						@endif
+					@endforeach
+											
 				</tbody>
 
 			</table>
@@ -107,30 +114,12 @@
 			<div class="col-md-8">
 			<table class="table">
 				<tbody>
+					@foreach($discounts as $discount)
 					<tr>
-						<th>Valedictorians/First Honors</th>
-						<td>-100%</td>
+						<th class="capital-letter">{{$discount->titleDiscount}}</th>
+						<td>{{$discount->percent}}%</td>
 					</tr>	
-					<tr>
-						<th>Salutatorian/Second Honors</th>
-						<td>-50%</td>
-					</tr>	
-					<tr>
-						<th>Third/Fifth Honors</th>
-						<td>-50%</td>
-					</tr>		
-					<tr>
-						<th>Brothers & Sisters</th>
-						<td>-5%</td>
-					</tr>
-					<tr>
-						<th>Gov't Employees</th>
-						<td>-5%</td>
-					</tr>
-					<tr>
-						<th>Cash Payments</th>
-						<td>-5%</td>
-					</tr>																								
+					@endforeach														
 				</tbody>
 
 			</table>
