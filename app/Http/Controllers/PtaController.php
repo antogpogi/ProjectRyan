@@ -57,10 +57,10 @@ class PtaController extends Controller
         $pta->ptaPosition = $request->ptaPosition;
         $pta->ptaMrs = $request->ptaMrs;
         $pta->slug = $request->slug;
-
         $pta->save();
-        return redirect()->route('pta.show',$pta->id); 
         Session::flash('success','The PTA was successfully save!');
+        return redirect()->route('pta.show',$pta->id); 
+       
     }
 
     /**

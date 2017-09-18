@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLnewsTable extends Migration
+class CreateTuitionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateLnewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lnews', function (Blueprint $table) {
+        Schema::create('tuitions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titleNews');
-            $table->string('slug');
-            $table->text('bodyNews');
-            $table->string('imageNews');
+            $table->string('title');
+            $table->string('level');
+            $table->string('downPayment');
+            $table->string('computerFee');
+            $table->string('monthlyFee');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateLnewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lnews');
+        Schema::dropIfExists('tuitions');
     }
 }

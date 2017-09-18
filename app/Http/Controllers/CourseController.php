@@ -64,7 +64,7 @@ class CourseController extends Controller
             $location = public_path('images/'. $filename);
 
             
-            Image::make($image)->resize(600,400)->save($location);
+            Image::make($image)->resize(1200,620)->save($location);
 
         $course->imageCourse=$filename;    
         }
@@ -125,7 +125,7 @@ class CourseController extends Controller
 
             File::delete(public_path('images/'. $course->imageCourse));
 
-            Image::make($image)->resize(400,300)->save($location);
+            Image::make($image)->resize(1200,620)->save($location);
 
             //$oldFilename = $course->imageCourse;
             //update the database

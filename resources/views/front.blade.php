@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<style type="text/css">
+  body{
+    
+      
+  }
+
+</style>
 @include('frontPartials._header')
 
   <body>
@@ -99,6 +106,9 @@
           @endforeach
 
         </div>
+        <br>
+        <br>
+        <hr class="bottom-line">
       </div>
     </section>
 

@@ -7,6 +7,8 @@ use App\Event;
 use App\Course;
 use App\lnew;
 use App\pta;
+use App\Discount;
+use App\Tuition;
 class PagesController extends Controller
 {
 	
@@ -21,7 +23,9 @@ class PagesController extends Controller
 
 	public function getAdmission()
 	{
-		return view('admission');
+		$discounts = Discount::orderBy('created_at','asc')->limit(10)->get();
+		$tuitions = Tuition::orderBy('created_at','asc')->limit(10)->get();
+		return view('admission')->withDiscounts($discounts)->withTuitions($tuitions);
 	}
 
 	public function getFaculty()

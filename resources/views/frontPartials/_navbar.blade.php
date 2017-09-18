@@ -10,9 +10,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="hidden-xs imahe" src="/img/svla.png" style=""><a class="navbar-brand site-logo" href="#"><span class="svla">SVLA</span></a>
+      <img class="hidden-xs imahe" src="/img/svla.png" style=""><a class="navbar-brand site-logo" href="/"><span class="svla">SVLA</span></a>
     </div>
-      
       <div class="collapse navbar-collapse navbar-right  header-right-menu" id="navbar-primary-collapse">
             <ul class="nav navbar-nav ">
             <li class="page-scroll">
@@ -29,7 +28,7 @@
                       <ul class="dropdown-menu">
                         <li><a href="history">History</a></li>
                         <li><a href="board">Board of Trustees</a></li>
-                        <li><a href="board">PTA</a></li>
+                        <li><a href="pta-front">PTA</a></li>
                         <li><a href="#">Faculty & Staff</a></li>
                       </ul>
                     </li>

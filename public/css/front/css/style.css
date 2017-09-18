@@ -12,7 +12,6 @@ body {
     font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-
 }
 ol, ul {
 	list-style: none;
@@ -288,6 +287,8 @@ h2{
 ************************************/
 #organisations{
     background-color: rgb(247, 247, 247);
+    background-image:url('{{ asset('img/svla.png') }}');
+
 }
 .orga-stru
 {

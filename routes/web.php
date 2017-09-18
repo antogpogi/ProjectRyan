@@ -31,6 +31,9 @@ Route::resource('news','NewsController');
 Route::resource('staff','StaffController');
 Route::resource('faculty','FacultyController');
 Route::resource('pta','PtaController');
+Route::resource('admin','AdminController');
+Route::resource('discount','DiscountController');
+Route::resource('tuition','TuitionController');
 
 Auth::routes();
 
