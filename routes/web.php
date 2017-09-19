@@ -26,6 +26,9 @@ Route::get('login','LoginController@index')->name('login');
 Route::resource('announcement','AnnouncementController');
 Route::resource('frontend','frontController');
 Route::resource('events','EventsController');
+Route::group(['middleware' => 'guest'], function() {
+  Route::resource('section', 'SectionController');
+});
 Route::resource('course','CourseController');
 Route::resource('news','NewsController');
 Route::resource('staff','StaffController');
@@ -34,8 +37,6 @@ Route::resource('pta','PtaController');
 Route::resource('admin','AdminController');
 Route::resource('discount','DiscountController');
 Route::resource('tuition','TuitionController');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

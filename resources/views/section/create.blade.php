@@ -41,32 +41,8 @@
                             <br>
                             <br>
 
-                            {!! Html::LinkRoute('section.show','Add new section',array($course->id),array('class' =>'Btn Btn-blue btn-md')) !!}
+                            @include('course._sectioncreate')
 
-                            <table id="sectionTable" class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Section</th>
-                                        <th>Description</th>
-                                        <th>Adviser</th>
-                                        <th>Action</th>
-                                    </tr>   
-                                </thead>
-                                <tbody>
-                                    @foreach ($sections as $section)
-                                        <tr>
-                                            <th>{{$section->name}}</th>
-                                            <td class="ellipsi">{{$section->description}}</td>
-                                            <td>{{$section->adviser}}</td>
-                                            <td>
-                                                {!! Html::LinkRoute('section.show','View',array($section->id),array('class' =>'Btn Btn-white Btn-sm')) !!}
-                                                {!! Html::LinkRoute('section.edit','Edit',array($section->id),array('class' =>'Btn Btn-blue Btn-sm')) !!}
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            
                         </div>
                         <div class="col-md-4">
                             <div class="well">
@@ -112,4 +88,7 @@
         </div>
     </div><!--/span-->
 	
+
+
+
 @endsection

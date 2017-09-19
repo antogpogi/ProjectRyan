@@ -35,7 +35,11 @@
                                 {{Form::text('middleName',null,array('','placeholder' => 'Middlename...' , 'class' => 'form-control capital-letter','required' => ''))}}
                                  <br>
                                  {{Form::label('adClass','Advisory Class:')}}
-                                 {{Form::select('advisoryClass', $advisoryClass)}}
+                                 <select name="advisoryClass" id="advisoryClass">
+                                    @foreach($sections as $section)
+                                    <option value="{{$section->name}}">{{$section->name}}</option>
+                                    @endforeach
+                                </select>
                                  <br><br>
                                 {{Form::label('imageFaculty','Update Image:')}}
                                 {{Form::file('imageFaculty')}}

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Faculty;
+use App\Section;
 use Session;
 use Image;
 use Storage;
@@ -12,7 +14,7 @@ class FacultyController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+       
     }
     /**
      * Display a listing of the resource.
@@ -32,8 +34,8 @@ class FacultyController extends Controller
      */
     public function create()
     {
-        $advisoryClass = Faculty::pluck('advisoryClass')->all();
-        return view('faculty.create', compact('advisoryClass'));
+        $sections = Section::orderBy('course')->get();
+        return view('faculty.create')->withSections($sections);
     }
 
     /**
@@ -56,7 +58,7 @@ class FacultyController extends Controller
         $faculty->firstName=$request->firstName;
         $faculty->lastName=$request->lastName;
         $faculty->middleName=$request->middleName;
-        $faculty->advisoryClass=$request->advisoryClass;
+        $faculty->advisoryClass = Input::get('advisoryClass');
         $faculty->slug=$request->slug;
         if($request->hasfile('imageFaculty')){
             $image = $request->file('imageFaculty');
@@ -65,7 +67,10 @@ class FacultyController extends Controller
             Image::make($image)->resize(200,400)->save($location);
             $faculty->imageFaculty=$filename;
         }
+
         $faculty->save();
+        $section = Section::where('name', Input::get('advisoryClass'))->update(['adviser' => $request->firstName." ".$request->middleName." ".$request->lastName]);
+        
         Session::flash('success','The Faculty was successfully save.');
         return redirect()->route('faculty.show',$faculty->id);
     }
@@ -93,8 +98,8 @@ class FacultyController extends Controller
     {
         //
         $faculty = Faculty::find($id);
-        $advisoryClass = Faculty::pluck('advisoryClass')->all();
-        return view('faculty.edit', compact('advisoryClass'))->withFaculty($faculty);
+        $sections = Section::orderBy('course')->get();
+        return view('faculty.edit')->withFaculty($faculty)->withSections($sections);
     }
 
     /**
@@ -135,6 +140,7 @@ class FacultyController extends Controller
             $faculty->middleName = $request->input('middleName');
             $faculty->advisoryClass = $request->input('advisoryClass');
             $faculty->save();
+            $section = Section::where('name', Input::get('advisoryClass'))->update(['adviser' => $request->firstName." ".$request->middleName." ".$request->lastName]);
             Session::flash('success','This Faculty Member was successfully saved.');
             return redirect()->route('faculty.show',$faculty->id);
     }

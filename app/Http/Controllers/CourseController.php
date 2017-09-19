@@ -5,16 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 use Session;
+use App\Section;
 use File;
 use Image;
 use Storage;
 
 class CourseController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -84,7 +81,8 @@ class CourseController extends Controller
     public function show($id)
     {
         $course = Course::find($id);
-        return view('course.show')->withCourse($course);
+        $sections = Section::where('course', $id)->get();
+        return view('course.show')->withCourse($course)->withSections($sections);
     }
 
     /**

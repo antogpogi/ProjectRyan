@@ -19,7 +19,7 @@
                 </div>
                 <div class="box-content">
                     <div class="container">
-                    <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover">
                       <thead>
 				<tr>
 					<th>Id_no.</th>

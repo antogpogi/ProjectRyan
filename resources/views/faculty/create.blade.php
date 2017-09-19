@@ -47,8 +47,12 @@
                         {{Form::label('Lastname','Last Name:')}}
                         {{Form::text('lastName',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>
-                        {{Form::label('advisoryClass','Advisory Class:')}}
-                        {{Form::select('advisoryClass', $advisoryClass)}}
+                        {{Form::label('adClass','Advisory Class:')}}
+                        <select name="advisoryClass" id="advisoryClass">
+                            @foreach($sections as $section)
+                            <option value="{{$section->name}}">{{$section->name}}</option>
+                            @endforeach
+                        </select>
                         <br>
                         {{Form::label('imageFaculty','Upload Image:')}}
                         {{Form::file('imageFaculty')}}
@@ -116,7 +120,7 @@
         dateFormat: 'MM d,yy'
     });
   });
-  </script>
+</script>
 
 @endsection
 
