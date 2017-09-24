@@ -64,7 +64,7 @@ class FacultyController extends Controller
             $image = $request->file('imageFaculty');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/'.$filename);
-            Image::make($image)->resize(200,400)->save($location);
+            Image::make($image)->resize(1200,600)->save($location);
             $faculty->imageFaculty=$filename;
         }
 

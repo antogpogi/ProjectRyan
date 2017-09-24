@@ -100,7 +100,7 @@
                   <h3 class="capital-letter">{{$course->titleCourse}}</h3><br>
                   <p>{{$course->bodyCourse}}</p>
               </figcaption>
-              <a href="#"></a>
+              <a href="admission"></a>
             </figure>
           </div>
           @endforeach

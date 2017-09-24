@@ -34,39 +34,15 @@
                 <div class="box-content">
                     <div class="row">
                         <div class="col-md-8">
-                            <img src="{{ asset('images/' . $course->imageCourse)}}" class="img-responsive">
+                            <img src="{{ asset('images/'.$course->imageCourse)}}" class="img-responsive">
                             <h1 class="h1-tag capital-letter">{{$course->titleCourse}}</h1>
                             <br>
                             <p  class="lead break-word">{{$course->bodyCourse}}</p>
                             <br>
                             <br>
 
-                            {!! Html::LinkRoute('section.show','Add new section',array($course->id),array('class' =>'Btn Btn-blue btn-md')) !!}
+                            @include('course._sectionedit')
 
-                            <table id="sectionTable" class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Section</th>
-                                        <th>Description</th>
-                                        <th>Adviser</th>
-                                        <th>Action</th>
-                                    </tr>   
-                                </thead>
-                                <tbody>
-                                    @foreach ($sections as $section)
-                                        <tr>
-                                            <th>{{$section->name}}</th>
-                                            <td class="ellipsi">{{$section->description}}</td>
-                                            <td>{{$section->adviser}}</td>
-                                            <td>
-                                                {!! Html::LinkRoute('section.edit','Edit',array($section->id),array('class' =>'Btn Btn-yellow Btn-sm')) !!}
-                                                {!! Html::LinkRoute('section.destroy','Delete',array($section->id),array('class' =>'Btn Btn-red Btn-sm')) !!}
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            
                         </div>
                         <div class="col-md-4">
                             <div class="well">
@@ -112,4 +88,7 @@
         </div>
     </div><!--/span-->
 	
+
+
+
 @endsection

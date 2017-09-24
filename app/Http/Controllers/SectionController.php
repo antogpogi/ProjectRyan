@@ -50,7 +50,7 @@ class SectionController extends Controller
         $section->name = $request->name;
         $section->description = $request->description;
         $section->adviser = "";
-        $section->course = $request->id;
+        $section->course = $request->title;
         $section->save();
         Session::flash('success','The Course was successfully save!');
         return redirect()->route('course.show',$request->id);
@@ -79,6 +79,10 @@ class SectionController extends Controller
     public function edit($id)
     {
         //
+        
+        $section = Section::find($id);
+        $course = Course::where('titleCourse', $section->course)->first();
+        return View('section.edit')->withCourse($course)->withSection($section);
     }
 
     /**
@@ -91,6 +95,19 @@ class SectionController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $sections = Section::find($id);
+        $this->validate($request, array(
+
+            'name' => 'required',
+            'description' => 'required',
+
+            ));
+        $sections->name = $request->name;
+        $sections->description = $request->description;
+        $sections->save();
+        Session::flash('success','The Section was successfully save!');
+        return redirect()->route('course.index');
     }
 
     /**
@@ -102,5 +119,9 @@ class SectionController extends Controller
     public function destroy($id)
     {
         //
+        $sections = Section::find($id);
+        $sections->delete();
+        Session::flash('success','The section was successfully deleted');
+        return redirect()->route('course.index');
     }
 }

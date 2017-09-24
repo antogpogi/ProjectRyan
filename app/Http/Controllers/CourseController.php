@@ -81,7 +81,7 @@ class CourseController extends Controller
     public function show($id)
     {
         $course = Course::find($id);
-        $sections = Section::where('course', $id)->get();
+        $sections = Section::where('course', $course->titleCourse)->get();
         return view('course.show')->withCourse($course)->withSections($sections);
     }
 

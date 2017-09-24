@@ -1,5 +1,7 @@
 DASHBOARD NA LANG AT AYOS LOGIN
 
+LOGIN ON THE WAY //yung guard middleware nlng. bale okay na yung pag login. nag reredirect na sa Admin page. kaso nabubuksan pa din agad yung mga page pang admin. ayusin ko mya mya. lalandi muna ko. <3
+
 BACKEND
 
 STAFF			--DONE

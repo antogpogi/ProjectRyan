@@ -7,7 +7,7 @@ use App\Tuition;
 use Session;
 class TuitionController extends Controller
 {
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth');
     }

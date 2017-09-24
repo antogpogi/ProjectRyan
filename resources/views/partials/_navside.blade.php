@@ -14,7 +14,7 @@
                          <li><a href="/tuition"><span> Tuitions</span></a></li>
                             <li class="nav-header hidden-md">School</li>
                         <li><a class="" href="/course"><span> Courses offered</span></a></li> 
-                        <li><a class="" href="news"><span> Latest News</span></a></li>
+                        <li><a class="" href="/news"><span> Latest News</span></a></li>
                         <li><a class="" href="/events"><span> Events</span></a> </li>
                         <li class="{{ Request::is('/announcement') ? "ajax-link" : ""}}"><a class="" href="/announcement"><span> Announcement</span></a>
 

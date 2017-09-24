@@ -6,7 +6,7 @@
         {{Form::label('description','Description:')}}
         {{Form::textarea('description',null,array('','placeholder' => 'Description...' , 'class' => 'form-control capital-letter','required' => ''))}}
         <br>
-        {{Form::hidden('id', $course->id) }}
+        {{Form::hidden('title', $course->titleCourse) }}
          {{Form::submit('Submit',array('class' => 'Btn btn-lg Btn-blue ','style' => '', 'onclick' => 'viewSection'))}} 
     </div>
 {!!Form::close()!!}
