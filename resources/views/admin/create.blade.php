@@ -32,10 +32,10 @@
                     <div class="form-group">
                             <div class="col-md-5">
                         {{Form::label('username','Username:')}}
-                        {{Form::text('username',null,array('','placeholder' => 'Username...' , 'class' => 'form-control','required' => ''))}}
+                        {{Form::text('email',null,array('','placeholder' => 'Email...' , 'class' => 'form-control','required' => ''))}}
                         <br>
                         {{Form::label('password','Password:')}}
-                        {{Form::text('password',null,array('placeholder' => 'Password...','class' => 'form-control password','required' => ''))}}
+                        {{Form::password('password', array('placeholder' => 'Password...','class' => 'form-control password','required' => ''))}}
                         <br>
                         {{Form::label('position','Position:')}}
                         {{Form::text('position',null,array('','placeholder' => 'Position...' , 'class' => 'form-control','required' => ''))}}
