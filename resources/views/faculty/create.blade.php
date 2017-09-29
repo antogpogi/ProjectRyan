@@ -61,7 +61,7 @@
                         </div>                        
                         <div class="btn btn-default image-preview-input">
                             
-                            <span class="fa fa-folder-open"></span> Choose File...
+                            <span class="fa fa-folder-open"></span> Choose File...adasdas
                             <div class="input-group image-preview"></div>
                             <input name="imageFaculty" id="userImage" type="file" class="inputFile" onChange="showPreview(this);" />
                         </div>
