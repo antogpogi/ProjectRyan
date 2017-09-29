@@ -25,6 +25,8 @@
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Middlename</th>
+                    <th>Slug</th>
+                    <th>Level</th>
                     <th>Advisory Class</th>
                     <th>Action</th>
                 </tr>   
@@ -36,6 +38,8 @@
                     <td>{{$fac->firstName}}</td>
                     <td>{{$fac->lastName}}</td>
                     <td>{{$fac->middleName}}</td>
+                    <td>{{$fac->slug}}</td>
+                    <td>{{$fac->level}}</td>
                     <td>{{$fac->advisoryClass}}</td>
 
                     

@@ -402,11 +402,11 @@ Work Shop
 Mentor Team
 ************************************/
 .pm-staff-profile-image{
-  width: 150px;
-  height: 150px;
-  background-color: #C6C6C6;
-  border-radius: 50%;
-  display: inline-block;
+    width: 210px;
+    height: 100%;
+    background-color: #d5d64a;
+    border-radius: 50%;
+    display: inline-block;
 }
 .pm-staff-profile-details {
     padding: 20px 20px;

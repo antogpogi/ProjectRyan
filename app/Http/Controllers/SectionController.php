@@ -42,13 +42,15 @@ class SectionController extends Controller
         //
         $this->validate($request, array(
 
-            'name' => 'required|unique:Sections',
-            'description' => 'required',
+            'sectionName' => 'required|unique:Sections',
+            'timeAm' => 'required',
+            'timePm' => 'required'
 
             ));
         $section = new Section;
-        $section->name = $request->name;
-        $section->description = $request->description;
+        $section->sectionName = $request->sectionName;
+        $section->timeAm = $request->timeAm;
+        $section->timePm = $request->timePm;
         $section->adviser = "";
         $section->course = $request->title;
         $section->save();
@@ -99,12 +101,14 @@ class SectionController extends Controller
         $sections = Section::find($id);
         $this->validate($request, array(
 
-            'name' => 'required',
-            'description' => 'required',
+            'sectionName' => 'required',
+            'timeAm' => 'required',
+            'timePm' => 'required'
 
             ));
-        $sections->name = $request->name;
-        $sections->description = $request->description;
+        $sections->sectionName = $request->sectionName;
+        $sections->timeAm = $request->timeAm;
+        $sections->timePm = $request->timePm;
         $sections->save();
         Session::flash('success','The Section was successfully save!');
         return redirect()->route('course.index');

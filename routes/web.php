@@ -26,6 +26,7 @@ Route::get('board','PagesController@getBoard');
 Route::get('pta','PagesController@getBoard');
 Route::get('pta-front','PagesController@getPtaFront');
 //Route::get('blog',['uses' => 'BlogController@getIndex','as'=>'blog.index']);
+//Route::post('faculty',['uses' => 'FacultyController@store','as'=>'faculty.create']);
 Route::resource('announcement','AnnouncementController');
 Route::resource('frontend','frontController');
 Route::resource('events','EventsController');

@@ -29,7 +29,7 @@
                         <li><a href="history">History</a></li>
                         <li><a href="board">Board of Trustees</a></li>
                         <li><a href="pta-front">PTA</a></li>
-                        <li><a href="#">Faculty & Staff</a></li>
+                        <li><a href="frontFaculty">Faculty & Staff</a></li>
                       </ul>
                     </li>
              </ul>

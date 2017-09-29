@@ -17,8 +17,9 @@ class CreateFacultiesTable extends Migration
             $table->increments('id');
             $table->string('firstName');
             $table->string('lastName');
-            $table->string('middleName');
+            $table->string('middleName')->nullable();
             $table->string('advisoryClass');
+            $table->string('level');
             $table->string('slug');
             $table->string('imageFaculty');
             $table->timestamps();

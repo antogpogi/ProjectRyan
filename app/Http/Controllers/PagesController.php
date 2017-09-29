@@ -7,6 +7,7 @@ use App\Event;
 use App\Course;
 use App\lnew;
 use App\pta;
+use App\Faculty;
 use App\Discount;
 use App\Tuition;
 class PagesController extends Controller
@@ -30,7 +31,8 @@ class PagesController extends Controller
 
 	public function getFaculty()
 	{
-		return view('frontFaculty');
+		$faculty = Faculty::orderBy('created_at','asc')->get();
+		return view('frontFaculty')->withFaculty($faculty);
 	}
 	public function getHistory()
 	{

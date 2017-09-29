@@ -40,7 +40,8 @@
                             <h1 class="h1-tag capital-letter">{{$faculty->firstName}} {{$faculty->middleName}} {{$faculty->lastName}}</h1>
                             <br>
                             <label>Advisory Class</label>
-                            <p  class="lead break-word">{{$faculty->advisoryClass}}</p>
+                            <p  class="lead break-word">{{$faculty->level}} - {{$faculty->advisoryClass}}</p>
+                            <p  class="lead break-word"></p>
                         </div>
                         <div class="col-md-4">
                             <div class="well">

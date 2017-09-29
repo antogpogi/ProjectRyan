@@ -47,7 +47,8 @@
                                 <thead>
                                     <tr>
                                         <th>Section</th>
-                                        <th>Description</th>
+                                        <th>Time_Am</th>
+                                        <th>Time_Pm</th>
                                         <th>Adviser</th>
                                         <th>Action</th>
                                     </tr>   
@@ -55,8 +56,9 @@
                                 <tbody>
                                     @foreach ($sections as $section)
                                         <tr>
-                                            <th>{{$section->name}}</th>
-                                            <td class="ellipsi">{{$section->description}}</td>
+                                            <th>{{$section->sectionName}}</th>
+                                            <td>{{$section->timeAm}}</td>
+                                            <td>{{$section->timePm}}</td>
                                             <td>{{$section->adviser}}</td>
                                             <td>
                                                 {!! Html::LinkRoute('section.edit','Edit',array($section->id),array('class' =>'Btn Btn-yellow Btn-sm')) !!}

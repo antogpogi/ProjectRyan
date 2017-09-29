@@ -27,24 +27,39 @@
                     <div class="col-md-8">
 
                     {!!Form::model($faculty,['route' => ['faculty.update',$faculty->id],'method' => 'PUT','files' =>'true'])!!}
-                        <div class="form-group">
+                    <div class="form-group">
                             <div class="col-md-5">
-                                {{Form::label('name','Name:')}}
-                                {{Form::text('lastName',null,array('','placeholder' => 'Lastname...' , 'class' => 'form-control capital-letter','required' => ''))}}
-                                {{Form::text('firstName',null,array('','placeholder' => 'Firstname...' , 'class' => 'form-control capital-letter','required' => ''))}}
-                                {{Form::text('middleName',null,array('','placeholder' => 'Middlename...' , 'class' => 'form-control capital-letter','required' => ''))}}
-                                 <br>
-                                 {{Form::label('adClass','Advisory Class:')}}
-                                 <select name="advisoryClass" id="advisoryClass">
-                                    @foreach($sections as $section)
-                                    <option value="{{$section->name}}">{{$section->name}}</option>
-                                    @endforeach
-                                </select>
-                                 <br><br>
-                                {{Form::label('imageFaculty','Update Image:')}}
-                                {{Form::file('imageFaculty')}}
+                        {{Form::label('Firstname','First Name:')}}
+                        {{Form::text('firstName',null,array('','placeholder' => 'First name...' , 'class' => 'form-control capital-letter','required' => ''))}}
+                        <br>
+                        {{Form::label('lastName','Last Name:')}}
+                        {{Form::text('lastName',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
+                        <br>  
+                        {{Form::label('middleName','Middle Name:')}}
+                        {{Form::text('middleName',null,array('','placeholder' => 'Middle name...' , 'class' => 'form-control capital-letter'))}}
+                        
                             </div>                       
                         </div>
+
+                        <div class="form-group">
+                        <div class="col-md-6">
+                        {{Form::label('level','Level:')}}
+                        {{Form::text('level',null,array('','placeholder' => 'level...' , 'class' => 'form-control capital-letter','required' => ''))}}
+                        <br>
+                        {{Form::label('adClass','Advisory Class:')}}
+                        <select class="form-control capital-letter" name="advisoryClass" id="advisoryClass">
+                            @foreach($sections as $section)
+                            <option value="{{$section->sectionName}}">{{$section->sectionName}}</option>
+                            @endforeach
+                        </select>
+                        <br>
+                        {{Form::label('imageFaculty','Upload Image:')}}
+                        {{Form::file('imageFaculty')}}
+                        <br>
+                                </div>
+
+
+                            </div>
                         <br>
                     </div>
                     <br>

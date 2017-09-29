@@ -9,6 +9,7 @@ use App\Section;
 use Session;
 use Image;
 use Storage;
+use File;
 
 class FacultyController extends Controller
 {
@@ -16,6 +17,8 @@ class FacultyController extends Controller
     {
        
     }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -49,13 +52,15 @@ class FacultyController extends Controller
         $this->validate($request, array(
             'firstName' => 'required',
             'lastName' => 'required',
+            'level' => 'required',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:Faculties,slug',
-            'imageFaculty' => 'sometimes|image',
+            'imageFaculty' => 'sometimes|image|max:1000',
             'advisoryClass' => 'required'
             ));
 
         $faculty = new Faculty;
         $faculty->firstName=$request->firstName;
+        $faculty->level=$request->level;
         $faculty->lastName=$request->lastName;
         $faculty->middleName=$request->middleName;
         $faculty->advisoryClass = Input::get('advisoryClass');
@@ -64,12 +69,12 @@ class FacultyController extends Controller
             $image = $request->file('imageFaculty');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/'.$filename);
-            Image::make($image)->resize(1200,600)->save($location);
+            Image::make($image)->resize(420,420)->save($location);
             $faculty->imageFaculty=$filename;
         }
 
         $faculty->save();
-        $section = Section::where('name', Input::get('advisoryClass'))->update(['adviser' => $request->firstName." ".$request->middleName." ".$request->lastName]);
+        $section = Section::where('sectionName', Input::get('advisoryClass'))->update(['adviser' => $request->firstName." ".$request->middleName." ".$request->lastName]);
         
         Session::flash('success','The Faculty was successfully save.');
         return redirect()->route('faculty.show',$faculty->id);
@@ -117,8 +122,8 @@ class FacultyController extends Controller
                 $this->validate($request, array(
                 'lastName' => 'required',
                 'firstName' => 'required',
-                'middleName' => 'required',
-                'imageFaculty' => 'image'
+                'level' => 'required',
+                'imageFaculty' => 'image|max:1000'
             ));
             
             if($request->hasfile('imageFaculty')){
@@ -129,18 +134,21 @@ class FacultyController extends Controller
 
             File::delete(public_path('images/'. $faculty->imageFaculty));
 
-            Image::make($image)->resize(1200,620)->save($location);
+            Image::make($image)->resize(420,420)->save($location);
 
             $faculty->imageFaculty = $filename; 
 
             }
 
+
+
             $faculty->lastName = $request->input('lastName');
             $faculty->firstName = $request->input('firstName');
             $faculty->middleName = $request->input('middleName');
+            $faculty->level = $request->input('level');
             $faculty->advisoryClass = $request->input('advisoryClass');
             $faculty->save();
-            $section = Section::where('name', Input::get('advisoryClass'))->update(['adviser' => $request->firstName." ".$request->middleName." ".$request->lastName]);
+            $section = Section::where('sectionName', Input::get('advisoryClass'))->update(['adviser' => $request->firstName." ".$request->middleName." ".$request->lastName]);
             Session::flash('success','This Faculty Member was successfully saved.');
             return redirect()->route('faculty.show',$faculty->id);
     }

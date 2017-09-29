@@ -17,8 +17,9 @@ class CreateStaffTable extends Migration
             $table->increments('id');
             $table->string('firstName');
             $table->string('lastName');
-            $table->string('middleName');
+            $table->string('middleName')->nullable();
             $table->string('position');
+            $table->string('slug');
             $table->string('imageStaff');
             $table->timestamps();
         });

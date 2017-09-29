@@ -93,7 +93,7 @@
       <div class="container">
         <div class="row">
           @foreach($courses as $course)
-          <div style="" class="col-md-6 col-sm-6 padleft-right">
+          <div class="col-md-6 col-sm-6 padleft-right">
             <figure style=""class="imghvr-fold-up">
               <img src="{{ asset('images/' . $course->imageCourse)}}" class="img-responsive">
               <figcaption style="">

@@ -17,7 +17,7 @@ class CreatePtasTable extends Migration
             $table->increments('id');
             $table->string('ptaFname');
             $table->string('ptaLname');
-            $table->string('ptaMi');
+            $table->string('ptaMi')->nullable();
             $table->string('ptaPosition');
             $table->string('ptaMrs');
             $table->string('slug');
