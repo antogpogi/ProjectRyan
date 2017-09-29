@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <label>Username</label>
-                            <p class="h3-tag">{{$admin->username}}</p>
+                            <p class="lead break-word">{{$admin->email}}</p>
                             <br>
                             <label>Password</label>
                             <p  class="lead break-word">{{$admin->password}}</p>

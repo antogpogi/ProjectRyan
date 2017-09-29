@@ -15,6 +15,8 @@ Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('adm
 
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 
+Route::get('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
 Route::get('blog/{slug}',['as' => 'blog.single','uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('slug-course/{slug}',['as' => 'slug-course.single','uses' => 'BlogController@getCourse'])->where('slug', '[\w\d\-\_]+');
 Route::get('slug-news/{slug}',['as' => 'slug-news.single','uses' => 'BlogController@getNews'])->where('slug', '[\w\d\-\_]+');

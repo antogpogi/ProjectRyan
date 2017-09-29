@@ -13,8 +13,10 @@ class User extends Authenticatable
     protected $guard = 'admin';
 
     protected $fillable = [
-   	'email', 'password', 'position'];
+   	'email', 'password', 'position',
+   	];
 
     protected $hidden = [
-    'password', 'remember_token'];
+    'password', 'remember_token',
+    ];
 }

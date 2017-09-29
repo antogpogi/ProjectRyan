@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <div class="col-md-5">
                                 {{Form::label('username','Username:')}}
-                                {{Form::text('username',null,array('','placeholder' => 'Username...' , 'class' => 'form-control','required' => ''))}}
+                                {{Form::text('email',null,array('','placeholder' => 'Email...' , 'class' => 'form-control','required' => ''))}}
                                  <br>
                                 {{Form::label('password','Password:')}}
                                 {{Form::text('password',null,array('','placeholder' => 'Password...' , 'class' => 'form-control','required' => ''))}}

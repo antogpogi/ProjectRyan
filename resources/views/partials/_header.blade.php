@@ -1,7 +1,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Controll Panel @yield('title')</title>
+    <title>Control Panel @yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 

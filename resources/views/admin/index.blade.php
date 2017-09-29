@@ -34,8 +34,8 @@
                     @foreach ($admin as $ad)
                     <tr>
 					<th>{{$ad->id}}</th>
-					<td>{{$ad->username}}</td>
-					<td class="ellipsi">{{$ad->password}}</td>
+					<td>{{$ad->email}}</td>
+					<td class="ellipsi">{{ bcrypt($ad->password) }}</td>
 					<td>{{$ad->position}}</td>
 
                     

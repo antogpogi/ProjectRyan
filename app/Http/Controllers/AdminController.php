@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 
 class AdminController extends Controller
 {
@@ -44,13 +45,13 @@ class AdminController extends Controller
     {
         //
         $this->validate($request, array(
-            'username' => 'required',
-            'password' => bcrypt($data['password']),
+            'email' => 'required',
+            'password' => 'required|min:5',
             'position' => 'required'
             ));
         $admin = new User;
-        $admin->username = $request->username;
-        $admin->password = $request->password;
+        $admin->email = $request->email;
+        $admin->password = bcrypt($request->password);
         $admin->position = $request->position;
         $admin->save();
         Session::flash('success','The Admin was successfully save!');
@@ -80,7 +81,7 @@ class AdminController extends Controller
     {
         //
         $admin = User::find($id);
-        return view('announcement.edit')->withAdmin($admin);
+        return view('admin.edit')->withAdmin($admin);
     }
 
     /**
@@ -94,12 +95,12 @@ class AdminController extends Controller
     {
         //
             $this->validate($request, array(
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required',
             'position' => 'required'));
             
             $admin = User::find($id);
-            $admin->username = $request->input('username');
+            $admin->email = $request->input('email');
             $admin->password = $request->input('password');
             $admin->position = $request->input('position');
             $admin->save();

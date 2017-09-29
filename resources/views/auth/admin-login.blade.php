@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '| PTA')
+@section('title', '| Login')
 
 @section('stylesheets')
     {!!Html::style('css/ellipsi.css') !!}
