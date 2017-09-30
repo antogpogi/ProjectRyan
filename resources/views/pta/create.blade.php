@@ -37,7 +37,7 @@
                         {{ Form::select('ptaMrs', ['Mrs' =>'Mrs','Ms' => 'Ms','Mr' =>'Mr'],null, ['class' => 'form-control']) }}  
                         {{Form::text('ptaFname',null,array('','placeholder' => 'First name...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         {{Form::text('ptaLname',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
-                        {{Form::text('ptaMi',null,array('','placeholder' => 'Middle name...' , 'class' => 'form-control capital-letter','required' => ''))}}
+                        {{Form::text('ptaMi',null,array('','placeholder' => 'Middle initial...' , 'class' => 'form-control all-caps','id' => 'ms_num','maxlenght' => '2'))}}
                         </div>
                         <br>
                             </div>
@@ -77,7 +77,7 @@
 
                                     <div class="col-sm-6">
                                         
-                                        <a href="/announcement" class="Btn btn-block Btn-yellow">Cancel</a>
+                                        <a href="/pta" class="Btn btn-block Btn-yellow">Cancel</a>
                                     </div>
                                 </div>
 
@@ -101,7 +101,7 @@
     {!! Html::script('js/parsley.min.js')!!}
     {!! Html::script('calendar/jquery-1.12.4.js')!!}
     {!! Html::script('calendar/jquery-ui.js')!!}
-    
+    {!! Html::script('js/numlength.js')!!}
 
 
 @endsection

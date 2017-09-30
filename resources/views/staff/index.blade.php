@@ -25,7 +25,9 @@
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Middlename</th>
+                    <th>slug</th>
                     <th>Position</th>
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>   
                       </thead>
@@ -36,7 +38,9 @@
                     <td>{{$staf->firstName}}</td>
                     <td>{{$staf->lastName}}</td>
                     <td>{{$staf->middleName}}</td>
-                    <td>{{$staf->advisoryClass}}</td>
+                    <td>{{$staf->slug}}</td>
+                    <td>{{$staf->position}}</td>
+                    <td class="ellipsi">{{$staf->imageStaff}}</td>
 
                     
                     <td>

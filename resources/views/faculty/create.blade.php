@@ -35,8 +35,8 @@
                         {{Form::label('lastName','Last Name:')}}
                         {{Form::text('lastName',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>  
-                        {{Form::label('middleName','Middle Name:')}}
-                        {{Form::text('middleName',null,array('','placeholder' => 'Middle name...' , 'class' => 'form-control capital-letter'))}}
+                        {{Form::label('middleName','Middle Initial:')}}
+                        {{Form::text('middleName',null,array('placeholder' => 'Middle Initial...' , 'class' => 'form-control all-caps','id' =>'ms_num','maxlenght' =>'2'))}}
                         <br>
                         {{Form::label('slug','Slug:')}}
                         {{Form::text('slug',null,array('','placeholder' => 'example-example.' , 'class' => 'form-control','required' => '','minlenght' =>'5','maxlenght' => '255'))}}
@@ -57,29 +57,25 @@
 
                         <br>
                         <div>
-                        {{Form::label('adClass','Advisory Class:')}}
+                        {{Form::label('uploadImage','Upload Image:')}}
                         </div>                        
                         <div class="btn btn-default image-preview-input">
                             
-                            <span class="fa fa-folder-open"></span> Choose File...adasdas
+                            <span class="fa fa-camera"></span> Choose File...
                             <div class="input-group image-preview"></div>
                             <input name="imageFaculty" id="userImage" type="file" class="inputFile" onChange="showPreview(this);" />
                         </div>
                         <br>
+                        <br>
 
-    <div class="bgColor">
-        <div id="targetOuter">
-            <div id="targetLayer"></div>
-            <img src="photo.png"  class="icon-choose-image" />
-            <div class="icon-choose-image" >
-            
-            </div>
-        </div>
-        <div>
-           
-        </div>
+                        <div class="bgColor">
+                            <center><div id="targetOuter">
+                                 <div  id="targetLayer"></div>
+          
 
-        </div>
+                            </div></center>
+
+                        </div><!-- -->
 
                                 </div>
 
@@ -133,60 +129,12 @@
 @section('scripts')
     
     {!! Html::script('js/parsley.min.js')!!}
+    {!! Html::script('js/image.validation.js')!!}
+    {!! Html::script('js/upload.js')!!}
+    {!! Html::script('js/numlength.js')!!}
     {!! Html::script('calendar/jquery-1.12.4.js')!!}
     {!! Html::script('calendar/jquery-ui.js')!!}
     
-
-<script type="text/javascript">
-function showPreview(objFileInput) {
-    if (objFileInput.files[0]) {
-        var fileReader = new FileReader();
-        fileReader.onload = function (e) {
-            $('#blah').attr('src', e.target.result);
-            $("#targetLayer").html('<img src="'+e.target.result+'" width="200px" height="200px" class="upload-preview" />');
-            $("#targetLayer").css('opacity','0.9');
-            $(".icon-choose-image").css('opacity','0.9');
-        }
-        fileReader.readAsDataURL(objFileInput.files[0]);
-
-
-            var oFile = document.getElementById("userImage").files[0]; // <input type="file" id="fileUpload" accept=".jpg,.png,.gif,.jpeg"/>
-
-            if (oFile.size > 1500000) // 2 mb for bytes.
-            {
-                alert("Too large Image. Only image smaller than 2MB can be uploaded.");
-                return;
-            }
-    }
-}
-</script>
-
-<script type="text/javascript">
-$(document).ready(function (e) {
-    $("#uploadForm").on('submit',(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: "upload.php",
-            type: "POST",
-            data:  new FormData(this),
-            beforeSend: function(){$("#body-overlay").show();},
-            contentType: false,
-            processData:false,
-            success: function(data)
-            {
-            $("#targetLayer").html(data);
-            $("#targetLayer").css('opacity','1');
-            setInterval(function() {$("#body-overlay").hide(); },500);
-            },
-            error: function() 
-            {
-            }           
-       });
-    }));
-});
-</script>
-
-
 @endsection
 
 

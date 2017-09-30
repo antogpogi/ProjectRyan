@@ -32,13 +32,13 @@
                 </div>
                 <div class="box-content">
                     <div class="row">
-                        <div class="col-md-8">
+                        <center><div class="col-md-8">
 
                             <h1 class="h1-tag capital-letter">{{$post->titleAnnouncement}}</h1>
                             <br>
                             <h4 class="h1-gray">{{$post->dateAnnouncement}}</h4>
                             <p  class="lead break-word">{{$post->bodyAnnouncement}}</p>
-                        </div>
+                        </div></center>
                         <div class="col-md-4">
                             <div class="well">
                                 <dl class="dl-horizontal">

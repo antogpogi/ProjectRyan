@@ -24,27 +24,45 @@
             </div>
             <div class="box-content">
                                 <div class="row">
-                    <div class="col-md-8">
-
-                	{!!Form::model($course,['route' => ['course.update',$course->id],'method' => 'PUT','files' =>'true'])!!}
-                    <div class="form-group">
-                            <div class="col-md-5">
+                                        <div class="col-md-8">
+                    {!!Form::model($course,['route' => ['course.update',$course->id],'method' => 'PUT','files' =>'true'])!!}
+                        <div class="form-group">
+                        <div class="col-md-7">
                         {{Form::label('titles','Title:')}}
                         {{Form::text('titleCourse',null,array('','placeholder' => 'Title...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>
                         {{Form::label('slug','Slug:')}}
                         {{Form::text('slug',null,array('','placeholder' => 'example-example.' , 'class' => 'form-control','required' => '','minlenght' =>'5','maxlenght' => '255'))}}
                          <br>
-                        {{Form::label('imageCourse','Update Image:')}}
-                        {{Form::file('imageCourse')}}
+                        {{Form::label('description','Description:')}}
+                        {{Form::textarea('bodyCourse',null,array('placeholder' => 'Description...', 'class' => 'form-control','required' => ''))}}
 
                             </div>                       
                         </div>
 
                             <div class="form-group">
-                                <div class="col-md-7">
-                        {{Form::label('description','Description:')}}
-                        {{Form::textarea('bodyCourse',null,array('placeholder' => 'Description...', 'class' => 'form-control','required' => ''))}}
+                                <div class="col-md-5">
+                         <div>
+                        {{Form::label('uploadImage','Upload Image:')}}
+                        </div>                        
+                        <div class="btn btn-default image-preview-input">
+                            
+                            <span class="fa fa-camera"></span> Choose File...
+                            <div class="input-group image-preview"></div>
+                            <input name="imageCourse" id="userImage" type="file" class="inputFile" onChange="showPreview(this);" />
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="bgColor">
+                            <center><div id="targetOuter">
+                                 <div  id="targetLayer"></div>
+          
+
+                            </div></center>
+
+                        </div><!-- -->
+
                                         <br>
        
                                 </div>
@@ -105,15 +123,9 @@
     {!! Html::script('js/parsley.min.js')!!}
     {!! Html::script('calendar/jquery-1.12.4.js')!!}
     {!! Html::script('calendar/jquery-ui.js')!!}
-    
-
-<script type="text/javascript">
-  $(function() {
-    $( "#datepicker" ).datepicker({
-        dateFormat: 'MM d,yy'
-    });
-  });
-  </script>
+    {!! Html::script('js/image.validation.js')!!}
+    {!! Html::script('js/upload.js')!!}
+    {!! Html::script('js/numlength.js')!!}
 
 @endsection
 

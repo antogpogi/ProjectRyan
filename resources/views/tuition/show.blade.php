@@ -15,7 +15,7 @@
 <div class="row">
 	<div class="container-fluid">
 		<ul class="breadcrumb breadcrumb-size">
-			<li><a href="{{route('tuition.create')}}">Add new Discount</a></li>
+			<li><a href="{{route('tuition.create')}}">Add new Tuition</a></li>
 			<li><a href="{{route('tuition.index')}}">View All</a></li>
 		</ul>
 	</div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="box-content">
                     <div class="row">
-                        <div class="col-md-8">
+                        <center><div class="col-md-8">
 
                             <h1 class="h1-tag capital-letter">{{$tuition->title}}</h1>
                             <br>
@@ -41,7 +41,7 @@
 
                             <br>
                               	                     
-                        </div>
+                        </div></center>
                         <div class="col-md-4">
                             <div class="well">
                                 <dl class="dl-horizontal">

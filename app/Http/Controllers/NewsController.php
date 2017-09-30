@@ -48,7 +48,7 @@ class NewsController extends Controller
         $this->validate($request,array(
             'titleNews' => 'required',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:lnews,slug',
-            'imageNews' => 'sometimes|image',
+            'imageNews' => 'sometimes|image|max:1000',
             'bodyNews' => 'required'
             ));
 
@@ -111,7 +111,7 @@ class NewsController extends Controller
                 'titleNews' => 'required',
                 'slug' => "required|alpha_dash|min:5|max:255|unique:lnews,slug,$id",
                 'bodyNews' => 'required',
-                'imageNews' => 'image'
+                'imageNews' => 'image|max:1000'
             ));
             
             if($request->hasfile('imageNews')){

@@ -25,6 +25,7 @@
 					<th>Id_no.</th>
 					<th>Title</th>
 					<th>Date</th>
+                    <th>slug</th>
 					<th>Description</th>
 					<th>Action</th>
 				</tr>	
@@ -36,6 +37,7 @@
 					<th>{{$post->id}}</th>
 					<td>{{$post->titleAnnouncement}}</td>
 					<td>{{$post->dateAnnouncement}}</td>
+                    <td>{{$post->slug}}</td>
 					<td class="ellipsi">{{$post->bodyAnnouncement}}</td>
 
                     

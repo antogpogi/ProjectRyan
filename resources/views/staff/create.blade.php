@@ -32,23 +32,43 @@
                         {{Form::label('Firstname','First Name:')}}
                         {{Form::text('firstName',null,array('','placeholder' => 'First name...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>
-                        {{Form::label('Middlename','Middle Name:')}}
-                        {{Form::text('middleName',null,array('','placeholder' => 'Middle name...' , 'class' => 'form-control capital-letter'))}}
+                        {{Form::label('Lastname','Last Name:')}}
+                        {{Form::text('lastName',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>
+                        {{Form::label('Middlename','Middle Name:')}}
+                        {{Form::text('middleName',null,array('','placeholder' => 'Middle initial...' , 'class' => 'form-control all-caps','id' =>'ms_num','maxlenght' =>'2'))}}
+                        <br>
+                        {{Form::label('slug','Slug:')}}
+                        {{Form::text('slug',null,array('','placeholder' => 'example-example.' , 'class' => 'form-control','required' => '','minlenght' =>'5','maxlenght' => '255'))}}
+
                             </div>                       
                         </div>
 
                             <div class="form-group">
                                 <div class="col-md-6">
-                        {{Form::label('Lastname','Last Name:')}}
-                        {{Form::text('lastName',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
-                        <br>
+
                         {{Form::label('pos','Position:')}}
                         {{Form::text('position',null,array('','placeholder' => 'Position...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>
-                        {{Form::label('imageStaff','Upload Image:')}}
-                        {{Form::file('imageStaff')}}
+                         <div>
+                        {{Form::label('uploadImage','Upload Image:')}}
+                        </div>         
+                            <div class="btn btn-default image-preview-input">  
+                                <span class="fa fa-camera"></span> Choose File...
+                                    <div class="input-group image-preview"></div>
+                                        <input name="imageStaff" id="userImage" type="file" class="inputFile" onChange="showPreview(this);" />
+                            </div>
                         <br>
+                        <br>
+
+                        <div class="bgColor">
+                            <center><div id="targetOuter">
+                                 <div  id="targetLayer"></div>
+          
+
+                            </div></center>
+
+                        </div><!-- -->
                                 </div>
 
 
@@ -104,15 +124,9 @@
     {!! Html::script('js/parsley.min.js')!!}
     {!! Html::script('calendar/jquery-1.12.4.js')!!}
     {!! Html::script('calendar/jquery-ui.js')!!}
-    
-
-<script type="text/javascript">
-  $(function() {
-    $( "#datepicker" ).datepicker({
-        dateFormat: 'MM d,yy'
-    });
-  });
-  </script>
+    {!! Html::script('js/image.validation.js')!!}
+    {!! Html::script('js/upload.js')!!}
+    {!! Html::script('js/numlength.js')!!}
 
 @endsection
 

@@ -47,7 +47,7 @@ class CourseController extends Controller
             'slug' => 'required|alpha_dash|min:5|max:255|unique:courses,slug',
             'imageCourse' => 'required',
             'bodyCourse' => 'required',
-            'imageCourse' => 'sometimes|image'
+            'imageCourse' => 'sometimes|image|max:1000'
 
             ));
 
@@ -112,7 +112,7 @@ class CourseController extends Controller
                 'titleCourse' => 'required',
                 'slug' => "required|alpha_dash|min:5|max:255|unique:Announcements,slug,$id",
                 'bodyCourse' => 'required',
-                'imageCourse' => 'image'
+                'imageCourse' => 'image|max:1000'
             ));
             
             if($request->hasfile('imageCourse')){

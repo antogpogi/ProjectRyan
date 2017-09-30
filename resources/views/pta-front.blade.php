@@ -17,7 +17,7 @@
 					<h3>{{$pta->ptaPosition}}</h3>
 				</div>
 				<i><div class="col-md-8">
-					<h3 class="gray">{{$pta->ptaMrs}}.&nbsp;{{$pta->ptaFname}}&nbsp;{{$pta->ptaLname}}&nbsp;{{$pta->ptaMi}}.</h3>
+					<h3 class="gray">{{$pta->ptaMrs}}.&nbsp;<span class="capital-letter">{{$pta->ptaFname}}<span>&nbsp;<span class="capital-letter">{{$pta->ptaLname}}</span>&nbsp;<span class="all-caps">{{$pta->ptaMi}}</span>.</h3>
 				</div></i>
 
 			</div>

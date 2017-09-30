@@ -55,7 +55,7 @@ class FacultyController extends Controller
             'level' => 'required',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:Faculties,slug',
             'imageFaculty' => 'sometimes|image|max:1000',
-            'advisoryClass' => 'required'
+            'advisoryClass' => 'required',
             ));
 
         $faculty = new Faculty;
@@ -69,7 +69,7 @@ class FacultyController extends Controller
             $image = $request->file('imageFaculty');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/'.$filename);
-            Image::make($image)->resize(420,420)->save($location);
+            Image::make($image)->resize(420,620)->save($location);
             $faculty->imageFaculty=$filename;
         }
 
@@ -123,7 +123,7 @@ class FacultyController extends Controller
                 'lastName' => 'required',
                 'firstName' => 'required',
                 'level' => 'required',
-                'imageFaculty' => 'image|max:1000'
+                'imageFaculty' => 'image|max:1500'
             ));
             
             if($request->hasfile('imageFaculty')){
@@ -134,7 +134,7 @@ class FacultyController extends Controller
 
             File::delete(public_path('images/'. $faculty->imageFaculty));
 
-            Image::make($image)->resize(420,420)->save($location);
+            Image::make($image)->resize(420,620)->save($location);
 
             $faculty->imageFaculty = $filename; 
 

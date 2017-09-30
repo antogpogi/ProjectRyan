@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Staff;
+use App\Staf;
 use Session;
 use Image;
 use Storage;
+use File;
 
 class StaffController extends Controller
 {
@@ -22,7 +23,7 @@ class StaffController extends Controller
     public function index()
     {
         //
-        $staff = Staff::orderBy('id','asc')->paginate(10);
+        $staff = Staf::orderBy('id','asc')->paginate(10);
         return view('staff.index')->withStaff($staff);
     }
 
@@ -49,20 +50,22 @@ class StaffController extends Controller
         $this->validate($request, array(
             'firstName' => 'required',
             'lastName' => 'required',
-            'imageStaff' => 'sometimes|image',
-            'position' => 'required'
+            'imageStaff' => 'sometimes|image|max:1000',
+            'position' => 'required',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:stafs,slug'
             ));
 
-        $staff = new Staff;
+        $staff = new Staf;
         $staff->firstName=$request->firstName;
         $staff->lastName=$request->lastName;
         $staff->middleName=$request->middleName;
         $staff->position=$request->position;
+        $staff->slug=$request->slug;
         if($request->hasfile('imageStaff')){
             $image = $request->file('imageStaff');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/'.$filename);
-            Image::make($image)->resize(200,400)->save($location);
+            Image::make($image)->resize(420,620)->save($location);
             $staff->imageStaff=$filename;
         }
         $staff->save();
@@ -79,7 +82,7 @@ class StaffController extends Controller
     public function show($id)
     {
         //
-        $staff = Staff::find($id);
+        $staff = Staf::find($id);
         return view('staff.show')->withStaff($staff);
     }
 
@@ -92,7 +95,7 @@ class StaffController extends Controller
     public function edit($id)
     {
         //
-        $staff = Staff::find($id);
+        $staff = Staf::find($id);
         return view('staff.edit')->withStaff($staff);
     }
 
@@ -106,7 +109,7 @@ class StaffController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $staff = Staff::find($id);
+        $staff = Staf::find($id);
             
                 $this->validate($request, array(
                 'lastName' => 'required',
@@ -123,7 +126,7 @@ class StaffController extends Controller
 
             File::delete(public_path('images/'. $staff->imageStaff));
 
-            Image::make($image)->resize(1200,620)->save($location);
+            Image::make($image)->resize(420,620)->save($location);
 
             $staff->imageStaff = $filename; 
 
@@ -147,7 +150,7 @@ class StaffController extends Controller
     public function destroy($id)
     {
         //
-        $staff = Staff::find($id);
+        $staff = Staf::find($id);
         Storage::delete($staff->imageStaff);
         $staff->delete();
         Session::flash('success','The Staff Member was successfully deleted');

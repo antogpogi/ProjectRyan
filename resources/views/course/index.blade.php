@@ -25,6 +25,7 @@
 					<th>Id_no.</th>
 					<th>Title</th>
 					<th>slug</th>
+                    <th>Image</th>
 					<th>Description</th>
 					<th>Action</th>
 				</tr>	
@@ -36,6 +37,7 @@
 					<th>{{$course->id}}</th>
 					<td>{{$course->titleCourse}}</td>
 					<td>{{$course->slug}}</td>
+                    <td class="ellipsi">{{$course->imageCourse}}</td>
 					<td class="ellipsi">{{$course->bodyCourse}}</td>
 
                     

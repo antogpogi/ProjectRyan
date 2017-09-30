@@ -33,12 +33,12 @@
                 </div>
                 <div class="box-content">
                     <div class="row">
-                        <div class="col-md-8">
+                        <center><div class="col-md-8">
                             <img src="{{ asset('images/' . $lnew->imageNews)}}" class="img-responsive">
                             <h1 class="h1-tag capital-letter">{{$lnew->titleNews}}</h1>
                             <br>
                             <p  class="lead break-word">{{$lnew->bodyNews}}</p>
-                        </div>
+                        </div></center>
                         <div class="col-md-4">
                             <div class="well">
                                 <dl class="dl-horizontal">

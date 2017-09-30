@@ -33,15 +33,15 @@
                 </div>
                 <div class="box-content">
                     <div class="row">
-                        <div class="col-md-8">
+                        <center><div class="col-md-8">
                             <img src="{{ asset('images/' . $staff->imageStaff)}}" class="img-responsive">
                             <br>
-                            <label>Name</label>
+                            <label>Name: </label>
                             <h1 class="h1-tag capital-letter">{{$staff->firstName}} {{$staff->middleName}} {{$staff->lastName}}</h1>
                             <br>
-                            <label>Position</label>
+                            <label>Position :</label>
                             <p  class="lead break-word">{{$staff->position}}</p>
-                        </div>
+                        </div></center>
                         <div class="col-md-4">
                             <div class="well">
                                 <dl class="dl-horizontal">

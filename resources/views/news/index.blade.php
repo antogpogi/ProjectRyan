@@ -25,6 +25,7 @@
 					<th>Id_no.</th>
 					<th>Title</th>
 					<th>slug</th>
+                    <th>Image</th>
 					<th>Description</th>
 					<th>Action</th>
 				</tr>	
@@ -35,7 +36,8 @@
                     <tr>
 					<th>{{$lnew->id}}</th>
 					<td>{{$lnew->titleNews}}</td>
-					<td>{{$lnew->slug}}</td>
+                    <td>{{$lnew->slug}}</td>
+                    <td class="ellipsi">{{$lnew->imageNews}}</td>
 					<td class="ellipsi">{{$lnew->bodyNews}}</td>
 
                     

@@ -106,14 +106,12 @@ class PtaController extends Controller
             'ptaLname' => 'required',
             'ptaMi' => 'required',
             'ptaPosition' => 'required',
-            'ptaMrs' => 'required',
-            'slug' => 'required|alpha_dash|min:5|max:255|unique:ptas,slug,$id'
+            'ptaMrs' => 'required',         
             ));
         $pta->ptaLname = $request->input('ptaLname');
         $pta->ptaFname = $request->input('ptaFname');
         $pta->ptaMi = $request->input('ptaMi');
         $pta->ptaPosition = $request->input('ptaPosition');
-        $pta->slug = $request->input('slug');
         $pta->ptaMrs = $request->input('ptaMrs');
         $pta->save();
         Session::flash('success','This PTA was successfully saved.');

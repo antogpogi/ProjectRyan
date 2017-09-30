@@ -36,7 +36,7 @@
                         {{Form::text('lastName',null,array('','placeholder' => 'Last name...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>  
                         {{Form::label('middleName','Middle Name:')}}
-                        {{Form::text('middleName',null,array('','placeholder' => 'Middle name...' , 'class' => 'form-control capital-letter'))}}
+                        {{Form::text('middleName',null,array('','placeholder' => 'Middle name...' , 'class' => 'form-control all-caps','id' =>'ms_num','maxlenght' =>'2'))}}
                         
                             </div>                       
                         </div>
@@ -53,9 +53,26 @@
                             @endforeach
                         </select>
                         <br>
-                        {{Form::label('imageFaculty','Upload Image:')}}
-                        {{Form::file('imageFaculty')}}
+                        <div>
+                        {{Form::label('uploadImage','Upload Image:')}}
+                        </div> 
+                        <div class="btn btn-default image-preview-input">
+                            
+                            <span class="fa fa-camera"></span> Choose File...
+                            <div class="input-group image-preview"></div>
+                            <input name="imageFaculty" id="userImage" type="file" class="inputFile" onChange="showPreview(this);" />
+                        </div>
                         <br>
+                        <br>
+
+                        <div class="bgColor">
+                            <center><div id="targetOuter">
+                                 <div  id="targetLayer"></div>
+          
+
+                                    </div></center>     
+                        </div> <!--end ng display picture -->
+
                                 </div>
 
 
@@ -64,6 +81,11 @@
                     </div>
                     <br>
                     <br>
+
+
+
+
+
                         <div class="col-md-4">
                             <div class="well">
                                 <dl class="dl-horizontal">
@@ -109,6 +131,9 @@
 @section('scripts')
     
     {!! Html::script('js/parsley.min.js')!!}
+    {!! Html::script('js/image.validation.js')!!}
+    {!! Html::script('js/upload.js')!!}
+    {!! Html::script('js/numlength.js')!!}
     {!! Html::script('calendar/jquery-1.12.4.js')!!}
     {!! Html::script('calendar/jquery-ui.js')!!}
     

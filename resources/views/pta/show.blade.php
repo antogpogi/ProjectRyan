@@ -14,7 +14,7 @@
         <div class="container-fluid">
         <ul class="breadcrumb breadcrumb-size">
             <li>
-                <a href="{{ route('pta.create')}}">Add new News</a>
+                <a href="{{ route('pta.create')}}">Add new PTA</a>
             </li>
             <li>
                 <a href="{{ route('pta.index')}}"> View All</a>
@@ -33,12 +33,12 @@
                 </div>
                 <div class="box-content">
                     <div class="row">
-                        <div class="col-md-8">
+                        <center><div class="col-md-8">
                           
                             <h1 class="h1-tag capital-letter">{{$pta->ptaMrs}}.&nbsp;{{$pta->ptaFname}}&nbsp;{{$pta->ptaLname}}&nbsp;{{$pta->ptaMi}}</h1>
                             <br>
                             <p  class="lead break-word">{{$pta->ptaPosition}}</p>
-                        </div>
+                        </div></center>
                         <div class="col-md-4">
                             <div class="well">
                                 <dl class="dl-horizontal">

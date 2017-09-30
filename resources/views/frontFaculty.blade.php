@@ -24,9 +24,8 @@
               </div>                                
               <div class="pm-staff-profile-details text-center">  
                 <p class="pm-staff-profile-name">{{$fac->firstName}} <span>{{$fac->middleName}}.</span> {{$fac->lastName}}</p>
-                <p class="pm-staff-profile-title">Lead Software Engineer</p>
+                <p class="pm-staff-profile-title">{{$fac->level}}</p>
                 
-                <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
               </div> 
               <hr style="width:10%;" class="bottom-line">    
             </div>

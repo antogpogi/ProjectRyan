@@ -27,6 +27,7 @@
 					<th>Date</th>
                     <th>Time Start</th>
                     <th>Time End</th>
+                    <th>slug</th>
 					<th>Action</th>
 				</tr>	
 					  </thead>
@@ -38,6 +39,7 @@
                         <td>{{$event->dateEvents}}</td>
                         <td>{{$event->timeAmEvents}}</td>
                         <td>{{$event->timePmEvents}}</td>
+                        <td>{{$event->slug}}</td>
 
 
                         <td>

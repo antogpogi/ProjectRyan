@@ -28,23 +28,41 @@
 
                 	{!!Form::open(array('route'=>'news.store','data-parsley-validate' =>'','files' =>'true'))!!}
                     <div class="form-group">
-                            <div class="col-md-5">
+                            <div class="col-md-7">
                         {{Form::label('titles','Title:')}}
                         {{Form::text('titleNews',null,array('','placeholder' => 'Title...' , 'class' => 'form-control capital-letter','required' => ''))}}
                         <br>
                         {{Form::label('slug','Slug:')}}
                         {{Form::text('slug',null,array('','placeholder' => 'example-example.' , 'class' => 'form-control','required' => '','minlenght' =>'5','maxlenght' => '255'))}}
                          <br>
-                        {{Form::label('imageNews','Upload Image:')}}
-                        {{Form::file('imageNews')}}
-
+                        {{Form::label('description','Description:')}}
+                        {{Form::textarea('bodyNews',null,array('placeholder' => 'Description...', 'class' => 'form-control','required' => ''))}}
+                            <br>
                             </div>                       
                         </div>
 
                             <div class="form-group">
-                                <div class="col-md-7">
-                        {{Form::label('description','Description:')}}
-                        {{Form::textarea('bodyNews',null,array('placeholder' => 'Description...', 'class' => 'form-control','required' => ''))}}
+                                <div class="col-md-5">
+                        <div>
+                        {{Form::label('uploadImage','Upload Image:')}}
+                        </div>                        
+                        <div class="btn btn-default image-preview-input">
+                            
+                            <span class="fa fa-camera"></span> Choose File...
+                            <div class="input-group image-preview"></div>
+                            <input name="imageNews" id="userImage" type="file" class="inputFile" onChange="showPreview(this);" />
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="bgColor">
+                            <center><div id="targetOuter">
+                                 <div  id="targetLayer"></div>
+          
+
+                            </div></center>
+
+                        </div><!-- -->
                                         <br>
        
                                 </div>
@@ -102,7 +120,9 @@
     {!! Html::script('js/parsley.min.js')!!}
     {!! Html::script('calendar/jquery-1.12.4.js')!!}
     {!! Html::script('calendar/jquery-ui.js')!!}
-    
+    {!! Html::script('js/image.validation.js')!!}
+    {!! Html::script('js/upload.js')!!}
+    {!! Html::script('js/numlength.js')!!}
 
 
 @endsection
