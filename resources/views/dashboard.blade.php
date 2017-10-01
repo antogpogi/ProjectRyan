@@ -13,179 +13,27 @@
    <div class="container">
     <div class="col-md-12">
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                 
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">Faculty : <label class="label label-black">{{$fac}}</label><center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                         
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">Staff : <label class="label label-black">{{$sta}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                 
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">Sections : <label class="label label-black">{{$sec}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                     
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">
-                    PTA : <label class="label label-black">{{$pt}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                      
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">
-                    Tuitions : <label class="label label-black">{{$tui}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                         
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">
-                    Discounts : <label class="label label-black">{{$dis}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                  
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">
-                    Events : <label class="label label-black">{{$eve}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                      
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">
-                    Courses Offered : <label class="label label-black">{{$cour}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!--fac -->
+        @include('dashboardtable._fac')
+        <!--staff -->
+        @include('dashboardtable._sta')
+        <!--sec -->
+        @include('dashboardtable._sec')
+        <!-- pta -->
+        @include('dashboardtable._pt')
+        <!--tui -->
+        @include('dashboardtable._tui')
+        <!--dis -->
+        @include('dashboardtable._dis')
+        <!--eve -->
+        @include('dashboardtable._eve')
+        <!-- cour-->
+        @include('dashboardtable._cour')
+        <!--new -->
+        @include('dashboardtable._new')
+        <!-- ann-->
+        @include('dashboardtable._an')
                 <!-- last 2 -->
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                    
-                    </div>
-                </div>
-                <div class="offer-content">
-                    <center><h3 class="lead balak">
-                    Latest News : <label class="label label-black">{{$new}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="offer offer-black">
-                <div class="shape">
-                    <div class="shape-text">
-                  
-                    </div>
-                </div>
-                <div class="offer-content">
-                     <center><h3 class="lead balak">
-                    Announcements : <label class="label label-black">{{$ann}}</label></center>
-                    </h3>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
         </div>
 </div>
 
