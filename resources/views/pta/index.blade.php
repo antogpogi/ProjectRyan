@@ -18,7 +18,6 @@
 
                 </div>
                 <div class="box-content">
-                    <div class="container">
                     <table class="table table-bordered table-hover">
                       <thead>
 				<tr>
@@ -59,7 +58,6 @@
                    
                     </div>
                     </ul>
-                </div>
             </div>
         </div>
     </div>

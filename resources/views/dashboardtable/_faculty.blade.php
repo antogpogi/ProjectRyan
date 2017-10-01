@@ -1,23 +1,19 @@
-@extends('main')
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well">
+                <h2>Faculty</h2>
 
-@section('title', '| Faculty')
-
-@section('stylesheets')
-    {!!Html::style('css/ellipsi.css') !!}
-@endsection
-@section('box-content')
-
-       <p class="lead">Faculty Members</p>
-    <hr class="guhit">
-    <a class="Btn btn-labeled Btn-info" href="{{ route('faculty.create')}}"><span class="btn-label"><i class="fa fa-plus"></i></span> Create new</a>
-    <div class="row">
-        <div class="box col-md-12">
-            <div class="box-inner">
-                <div class="box-header well" data-original-title="">
-                    <h2>Faculty Table</h2>
-
+                <div class="box-icon">
+                    <a href="faculty" id="up" class="btn btn-minimize btn-round btn-default"><i
+                            class="fa fa-eye"></i></a>
+                    <a  id="up-faculty" class="btn btn-minimize btn-round btn-default"><i
+                            class="fa fa-chevron-up"></i></a>
+                    <a  id="down-faculty" class="btn btn-close btn-round btn-default"><i
+                            class="fa fa-chevron-down"></i></a>
                 </div>
-                <div class="box-content">
+            </div>
+                <div id="panel-faculty" class="box-content">
+
                     <table class="table table-bordered table-hover">
                       <thead>
                 <tr>
@@ -27,7 +23,6 @@
                     <th>Slug</th>
                     <th>Level</th>
                     <th>Advisory Class</th>
-                    <th>Action</th>
                 </tr>   
                       </thead>
                 <tbody>
@@ -40,12 +35,6 @@
                     <td>{{$fac->slug}}</td>
                     <td>{{$fac->level}}</td>
                     <td>{{$fac->advisoryClass}}</td>
-
-                    
-                    <td>
-                        {!! Html::LinkRoute('faculty.show','View',array($fac->id),array('class' =>'Btn Btn-white Btn-sm')) !!}
-                        {!! Html::LinkRoute('faculty.edit','Edit',array($fac->id),array('class' =>'Btn Btn-blue Btn-sm')) !!}
-                    </td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -57,11 +46,20 @@
                    
                     </div>
                     </ul>
-            </div>
-        </div>
+                </div>
+
     </div>
-    
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#up-faculty").click(function(){
+        $("#panel-faculty").slideUp("slow");
+        });
+
+                $("#down-faculty").click(function(){
+        $("#panel-faculty").slideDown("slow");
+    });
+    });
 
 
-
-@endsection
+    </script>

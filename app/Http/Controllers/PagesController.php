@@ -10,6 +10,8 @@ use App\pta;
 use App\Faculty;
 use App\Discount;
 use App\Tuition;
+use App\Section;
+use App\Staf;
 use DB;
 class PagesController extends Controller
 {
@@ -54,19 +56,33 @@ class PagesController extends Controller
 	public function getDashboard()
 	{
 		$fac = DB::table('faculties')->count();
-		$staf = DB::table('stafs')->count();
-		$pta = DB::table('ptas')->count();
-		$course = DB::table('courses')->count();
+		$sta = DB::table('stafs')->count();
+		$pt = DB::table('ptas')->count();
+		$cour = DB::table('courses')->count();
 		$new = DB::table('lnews')->count();
-		$event = DB::table('events')->count();
+		$eve = DB::table('events')->count();
 		$ann = DB::table('announcements')->count();
-		$user = DB::table('users')->count();
+		$sec = DB::table('sections')->count();
 		$dis = DB::table('discounts')->count();
 		$tui = DB::table('tuitions')->count();
 
-		
+		$courses = Course::orderBy('created_at','asc')->paginate(4);
+		$events = Event::orderBy('created_at','asc')->paginate(4);
+		$discounts = Discount::orderBy('created_at','asc')->paginate(4);
+		$tuitions = Tuition::orderBy('created_at','asc')->paginate(4);
+		$sections = Section::orderBy('created_at','asc')->paginate(4);
+		$news = lnew::orderBy('created_at','asc')->paginate(4);
+		$posts = Announcement::orderBy('created_at','asc')->paginate(4);
+		$ptas = pta::orderBy('created_at','asc')->paginate(10);
+		$faculty = Faculty::orderBy('created_at','asc')->paginate(10);
+		$staff = staf::orderBy('created_at','asc')->paginate(10);
 
-		return view('dashboard')->withFac($fac)->withStaf($staf)->withPta($pta)->withCourse($course)
-		->withNew($new)->withEvent($event)->withAnn($ann)->withUser($user)->withDis($dis)->withTui($tui);
+
+
+		return view('dashboard')->withFac($fac)->withSta($sta)->withPt($pt)->withCour($cour)
+		->withNew($new)->withEve($eve)->withAnn($ann)->withSec($sec)->withDis($dis)->withTui($tui)
+		->withCourses($courses)->withEvents($events)->withDiscounts($discounts)->withTuitions($tuitions)
+		->withSections($sections)->withNews($news)->withPosts($posts)->withPtas($ptas)
+		->withFaculty($faculty)->withStaff($staff);
 	}
 }

@@ -28,6 +28,7 @@ Route::get('board','PagesController@getBoard');
 Route::get('pta','PagesController@getBoard');
 Route::get('pta-front','PagesController@getPtaFront');
 Route::get('dashboard','PagesController@getDashboard');
+Route::resource('dashboardtable','PagesController');
 //Route::get('blog',['uses' => 'BlogController@getIndex','as'=>'blog.index']);
 //Route::post('faculty',['uses' => 'FacultyController@store','as'=>'faculty.create']);
 Route::resource('announcement','AnnouncementController');

@@ -18,7 +18,7 @@
 
                 </div>
                 <div class="box-content">
-                    <div class="container">
+                    <div class="">
                 <table class="table table-bordered table-hover">
                       <thead>
 				<tr>
